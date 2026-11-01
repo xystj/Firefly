@@ -183,7 +183,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件位置
 			position: "sticky",
 			// 是否在文章详情页显示
-			showOnPostPage: true,
+			showOnPostPage: false,
 			// 组件专属配置（广告内容直接在此配置）
 			specificConfig: {
 				ad: {
@@ -191,7 +191,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 						src: "/assets/images/ad/ad1.webp",
 						alt: "广告横幅",
 						link: "https://haoka.lot-ml.com/plugreg.html?agentid=1423316",
-						external: true,
+						external: false,
 					},
 					// 是否允许关闭广告
 					closable: false,
@@ -212,7 +212,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件位置
 			position: "sticky",
 			// 是否在文章详情页显示
-			showOnPostPage: true,
+			showOnPostPage: false,
 			// 组件专属配置（广告内容直接在此配置）
 			specificConfig: {
 				ad: {
@@ -267,7 +267,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件类型：标签组件
 			type: "tags",
 			// 是否启用该组件
-			enable: true,
+			enable: false,
 			// 是否在文章详情页显示
 			showOnPostPage: true,
 			// 组件专属配置

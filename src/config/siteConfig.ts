@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "砂糖小窝",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://blog.xianyu98.ccwu.cc/",
 
 	// 站点描述
 	description:
@@ -58,9 +58,7 @@ export const siteConfig: SiteConfig = {
 	keywords: [
 		"砂糖小窝",
 		"xianyu98",
-		"Astro",
-		"ACGN",
-		"博客",
+		"二里",
 		"咸鱼砂糖",
 		"砂糖",
 	],
@@ -337,7 +335,7 @@ export const siteConfig: SiteConfig = {
 		// - "both": 同时输出 AVIF 和 WebP（浏览器自动选择最佳格式）
 		formats: "webp",
 		// 图片压缩质量 (1-100)，值越低体积越小但质量越差，推荐 70-85
-		quality: 85,
+		quality: 80,
 		// 为特定域名的图片添加 referrerpolicy="no-referrer" 属性
 		// 支持通配符 *，例如：["i0.hdslb.com", "*.bilibili.com"]
 		// 可解决指定域名图片加载时的 403 问题（如防盗链图片）
