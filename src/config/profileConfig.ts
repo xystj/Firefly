@@ -12,7 +12,7 @@ export const profileConfig: ProfileConfig = {
 	name: "砂糖",
 
 	// 个人签名
-	bio: "复活",
+	bio: "zako",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
@@ -22,9 +22,9 @@ export const profileConfig: ProfileConfig = {
 	// showName: true 时显示图标和名称，false 时只显示图标
 	links: [
 		{
-			name: "QQ",
+			name: "QQ频道",
 			icon: "fa7-brands:qq",
-			url: "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=x7yyFALlbkCJEmMeDM-KD4i4ld8thGp8&authKey=picd6QS2VMFVe2Ato21c1bkW%2Fakch3wiomC%2FvcHcxcPz9l%2BCWc6X%2F5pinllaqePb&noverify=0&group_code=757229902",
+			url: "https://pd.qq.com/s/4x0zyrxo9",
 			showName: false,
 		},
 	],
