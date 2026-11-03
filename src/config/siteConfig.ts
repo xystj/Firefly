@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "小窝",
 
 	// 站点 URL
-	site_url: "https://blog.xianyu98.ccwu.cc/",
+	site_url: "https://blog.xytc.de5.net/",
 
 	// 站点描述
 	description:
