@@ -9,13 +9,13 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 
 	// 侧边栏位置：
 	// 如果觉得双栏太挤，可以改成 "left" (仅左侧) 或 "right" (仅右侧)
-	position: "both", 
+	position: "left", 
 
 	// 平板端显示哪侧
 	tabletSidebar: "left",
 
 	// 文章详情页隐藏侧边栏，设为 true 则只在首页等非文章页显示
-	hideSidebarOnPostPage: false,
+	hideSidebarOnPostPage: true,
 
 	// 本页没有侧栏列时，内容栏占「侧栏 + 内容栏」总宽的比例
 	noSidebarContentWidth: 0.6,
@@ -63,7 +63,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 		{
 			// 最新动态
 			type: "dynamic",
-			enable: true,
+			enable: false,
 			position: "top",
 			showOnPostPage: true,
 			specificConfig: {
@@ -109,10 +109,10 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			specificConfig: { collapseThreshold: 5 },
 		},
 		{
-			// 🗑️ 移动端的标签和统计我帮你精简掉了一些
+			// 动态
 			type: "dynamic",
-			enable: true,
-			showOnPostPage: true,
+			enable: false,
+			showOnPostPage: false,
 			specificConfig: { dynamic: { limit: 2 } },
 		},
 	],
