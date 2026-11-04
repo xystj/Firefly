@@ -182,7 +182,6 @@ src/
 │   ├── commentConfig.ts          # Comment system configuration
 │   ├── coverImageConfig.ts       # Cover image configuration
 │   ├── displaySettingsConfig.ts  # Settings panel configuration
-│   ├── dynamicConfig.ts          # Moments page configuration
 │   ├── effectsConfig.ts          # Animation effects config (sakura, etc.)
 │   ├── expressiveCodeConfig.ts   # Code highlighting configuration
 │   ├── fontConfig.ts             # Font configuration
@@ -218,28 +217,6 @@ comment: true    # Enable comments
 ---
 ```
 
-## Moments
-
-Moment files are stored in `src/content/dynamic/`, with one Markdown file per moment. Create one with:
-
-```bash
-pnpm new-d The weather is lovely today
-```
-
-`pnpm new-dynamic <content>` is the equivalent full command.
-
-```yaml
----
-published: 2026-07-15 16:15:29
-pinned: true  # Pin article
-location: China # Location
----
-
-Moment content supports Markdown.
-```
-
-Also supports [Memos](https://www.usememos.com/) as a data source. Configure the `memos` option in `src/config/dynamicConfig.ts` to fetch Memos moments in real-time, with pinned sync and image attachment support. See [Moments documentation](https://docs-firefly.cuteleaf.cn/en/guide/dynamic.html).
-
 ## 📖 Markdown Extensions
 
 In addition to the default [GitHub Flavored Markdown](https://github.github.com/gfm/) support in Astro, there are some additional Markdown features:
@@ -261,8 +238,6 @@ All commands need to be executed in the project root directory:
 | `pnpm check`               | Check for errors in code                            |
 | `pnpm format`              | Format your code using Biome                        |
 | `pnpm new-post <filename>` | Create new article                                  |
-| `pnpm new-d <content>`     | Create a new moment                                 |
-| `pnpm new-dynamic <content>` | Create a new moment (full command)                |
 | `pnpm astro ...`           | Execute `astro add`, `astro check` and other commands |
 | `pnpm astro --help`        | Display Astro CLI help                              |
 

@@ -182,7 +182,6 @@ src/
 │   ├── commentConfig.ts          # Comment system configuration
 │   ├── coverImageConfig.ts       # Cover image configuration
 │   ├── displaySettingsConfig.ts  # Settings panel configuration
-│   ├── dynamicConfig.ts          # Moments page configuration
 │   ├── effectsConfig.ts          # Animation effects config (sakura, etc.)
 │   ├── expressiveCodeConfig.ts   # Code highlighting configuration
 │   ├── fontConfig.ts             # Font configuration
@@ -218,28 +217,6 @@ comment: true    # Enable comments
 ---
 ```
 
-## 일상
-
-일상 파일은 `src/content/dynamic/`에 저장되며, 하나의 Markdown 파일이 하나의 일상에 해당합니다. 다음 명령으로 만들 수 있습니다.
-
-```bash
-pnpm new-d The weather is lovely today
-```
-
-`pnpm new-dynamic <content>`는 같은 기능을 하는 전체 명령입니다.
-
-```yaml
----
-published: 2026-07-15 16:15:29
-pinned: true  # Pin article
-location: China # Location
----
-
-일상 내용은 Markdown을 지원합니다.
-```
-
-[Memos](https://www.usememos.com/)를 데이터 소스로 사용할 수도 있습니다. `src/config/dynamicConfig.ts`의 `memos` 옵션을 구성하면 고정 항목 동기화와 이미지 첨부 표시를 지원하면서 Memos의 일상을 실시간으로 가져옵니다. 자세한 내용은 [일상 문서](https://docs-firefly.cuteleaf.cn/en/guide/dynamic.html)를 확인하세요.
-
 ## 🧩 Markdown 확장 문법
 
 Astro가 기본으로 지원하는 [GitHub Flavored Markdown](https://github.github.com/gfm/) 외에도 다음과 같은 Markdown 기능을 제공합니다.
@@ -261,8 +238,6 @@ Astro가 기본으로 지원하는 [GitHub Flavored Markdown](https://github.git
 | `pnpm check`               | 코드 오류 검사                                      |
 | `pnpm format`              | Biome으로 코드 서식 정리                            |
 | `pnpm new-post <filename>` | 새 게시물 생성                                      |
-| `pnpm new-d <content>`     | 새 일상 생성                                        |
-| `pnpm new-dynamic <content>` | 새 일상 생성(전체 명령)                           |
 | `pnpm astro ...`           | `astro add`, `astro check` 및 기타 명령 실행         |
 | `pnpm astro --help`        | Astro CLI 도움말 표시                               |
 

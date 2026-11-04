@@ -61,16 +61,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 	// ── 右侧边栏组件配置 ──────────────────────────────────
 	rightComponents: [
 		{
-			// 最新动态
-			type: "dynamic",
-			enable: false,
-			position: "top",
-			showOnPostPage: true,
-			specificConfig: {
-				dynamic: { limit: 2 },
-			},
-		},
-		{
 			// 站点统计（文章数、字数等）
 			type: "stats",
 			enable: true,
@@ -107,13 +97,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			enable: true,
 			showOnPostPage: true,
 			specificConfig: { collapseThreshold: 5 },
-		},
-		{
-			// 动态
-			type: "dynamic",
-			enable: false,
-			showOnPostPage: false,
-			specificConfig: { dynamic: { limit: 2 } },
 		},
 	],
 };

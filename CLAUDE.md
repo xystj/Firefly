@@ -18,7 +18,6 @@ Firefly is a feature-rich static blog theme built on **Astro 7** with **Svelte 5
 | `pnpm lint` | Biome lint + auto-fix |
 | `pnpm format` | Biome format |
 | `pnpm new-post <filename>` | Scaffold a new blog post |
-| `pnpm new-dynamic` (`new-d`) | Scaffold a new dynamic (microblog) entry |
 | `pnpm lqips` | Regenerate LQIP data into `src/constants/lqips.json` |
 
 Package manager is **pnpm** (enforced). Node.js >= 22 required.
@@ -57,7 +56,6 @@ Scroll-linked work in `src/utils/` is rAF-throttled and must stay cheap on mobil
 Defined in `src/content.config.ts`:
 - `posts` — blog posts (`.md`/`.mdx`) with frontmatter: title, published, tags, category, draft, pinned, password, comment, etc.
 - `spec` — special pages (about, guestbook)
-- `dynamic` — microblog entries (`.md`) with frontmatter: published, pinned, location
 
 ### Key Directories
 
@@ -66,7 +64,7 @@ Defined in `src/content.config.ts`:
 - `src/i18n/` — translation keys in `i18nKey.ts`, language files in `languages/*.ts`, lookup via `translation.ts`
 - `src/utils/` — content sorting, crypto (encrypted posts), date formatting, image processing/LQIP, TOC generation
 - `src/pages/` — Astro file-based routing
-- `scripts/` — build-time utilities (`generate-lqips.ts`, `generate-vndb-covers.ts`, `subset-fonts.ts`, `new-post.js`, `new-dynamic.js`)
+- `scripts/` — build-time utilities (`generate-lqips.ts`, `generate-vndb-covers.ts`, `subset-fonts.ts`, `new-post.js`)
 
 ### Path Aliases (tsconfig.json)
 

@@ -17,10 +17,6 @@ const pages = resolvePageToggles({
 
 	// ── 我的 (My) ──────────────────────────────────
 
-	// 动态页面开关
-	dynamic: false,
-	// 项目展示页开关
-	projects: false,
 	// 相册页面开关
 	gallery: false,
 	// 书签导航页面开关

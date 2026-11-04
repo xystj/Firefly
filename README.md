@@ -182,7 +182,6 @@ src/
 │   ├── commentConfig.ts          # 评论系统配置
 │   ├── coverImageConfig.ts       # 封面图配置
 │   ├── displaySettingsConfig.ts  # 设置面板配置
-│   ├── dynamicConfig.ts          # 动态页面配置
 │   ├── effectsConfig.ts          # 动画特效配置（樱花等）
 │   ├── expressiveCodeConfig.ts   # 代码高亮配置
 │   ├── fontConfig.ts             # 字体配置
@@ -217,28 +216,6 @@ comment: true    # 是否允许评论
 ---
 ```
 
-## 动态
-
-动态文件保存在 `src/content/dynamic/` 中，一个 Markdown 文件对应一条动态。可以使用快捷命令创建：
-
-```bash
-pnpm new-d 今天心情不错，出去吃了一顿火锅
-```
-
-`pnpm new-dynamic <content>` 也可以使用，和 `new-d` 完全等价。
-
-```yaml
----
-published: 2026-07-15 16:15:29
-pinned: true  # 置顶
-location: China # 位置
----
-
-动态内容可以使用 Markdown 语法。
-```
-
-也支持对接 [Memos](https://www.usememos.com/) 作为数据源，在 `src/config/dynamicConfig.ts` 中配置 `memos` 选项即可实时获取 Memos 动态，支持置顶同步和图片附件展示。详见[动态文档](https://docs-firefly.cuteleaf.cn/zh/guide/dynamic.html)。
-
 ## 🧩 Markdown 扩展语法
 
 除了 Astro 默认支持的 [GitHub Flavored Markdown](https://github.github.com/gfm/) 之外，还包含了一些额外的 Markdown 功能：
@@ -260,8 +237,6 @@ location: China # 位置
 | `pnpm check`               | 检查代码中的错误                       |
 | `pnpm format`              | 使用 Biome 格式化您的代码              |
 | `pnpm new-post <filename>` | 创建新文章                             |
-| `pnpm new-d <content>`     | 创建一条动态                           |
-| `pnpm new-dynamic <content>` | 创建一条动态（完整命令）              |
 | `pnpm astro ...`           | 执行 `astro add`, `astro check` 等指令 |
 | `pnpm astro --help`        | 显示 Astro CLI 帮助                    |
 
