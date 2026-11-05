@@ -130,7 +130,9 @@ export function getBannerVisibilityState(
 
 	const homeTextEnable = backgroundWallpaper.common?.homeText?.enable ?? false;
 	const showHomeText =
-		(isBannerMode || isFullscreenMode) && !!homeTextEnable && isHomePageCheck;
+		(isBannerMode || isFullscreenMode || isOverlayMode) &&
+		!!homeTextEnable &&
+		isHomePageCheck;
 	const homeTextLinksEnable =
 		backgroundWallpaper.common?.homeText?.linksEnable !== false;
 

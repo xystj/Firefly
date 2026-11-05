@@ -303,8 +303,7 @@ html[data-wallpaper-mode="overlay"] #wallpaper-wrapper {
     display: block !important;
 }
 
-/* Overlay 模式隐藏 Banner 专属元素 */
-#wallpaper-wrapper.wallpaper-overlay .banner-home-text-overlay,
+/* Overlay 模式隐藏 Banner 专属元素（首页 homeText 例外，由首页规则单独展示） */
 #wallpaper-wrapper.wallpaper-overlay .banner-page-title-overlay,
 #wallpaper-wrapper.wallpaper-overlay .banner-post-meta-overlay {
     display: none !important;
@@ -318,8 +317,7 @@ html[data-wallpaper-mode="overlay"] #wallpaper-wrapper {
 html[data-wallpaper-mode="none"] #wallpaper-wrapper {
     display: none !important;
 }
-/* overlay 模式：隐藏横幅标题/元信息覆盖层（镜像 .wallpaper-overlay 类规则） */
-html[data-wallpaper-mode="overlay"] #wallpaper-wrapper .banner-home-text-overlay,
+/* overlay 模式：隐藏横幅标题/元信息覆盖层（首页 homeText 除外） */
 html[data-wallpaper-mode="overlay"] #wallpaper-wrapper .banner-page-title-overlay,
 html[data-wallpaper-mode="overlay"] #wallpaper-wrapper .banner-post-meta-overlay {
     display: none !important;
@@ -330,6 +328,16 @@ html[data-wallpaper-mode="overlay"] #content-panel {
     top: 5.5rem !important;
     margin-top: 0 !important;
     min-height: calc(100vh - 5.5rem) !important;
+}
+
+/* overlay 首页：保留顶部横幅文本区域，内容整体下移到横幅下方，标题居中于该区域 */
+html[data-wallpaper-mode="overlay"] body.is-home #wallpaper-wrapper .banner-home-text-overlay {
+    height: var(--banner-height-home);
+    bottom: auto;
+}
+html[data-wallpaper-mode="overlay"] body.is-home #content-panel {
+    top: calc(var(--banner-height-home) - 3.5rem) !important;
+    min-height: calc(100vh - (var(--banner-height-home) - 3.5rem)) !important;
 }
 
 /* Swup 占位容器永远为空，任何断点都不得参与布局（勿依赖 hidden 实用类压过几何规则） */

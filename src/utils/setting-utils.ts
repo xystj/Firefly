@@ -282,8 +282,11 @@ export function initThemeListener(): void {
 
 // Wallpaper mode functions
 
+let overlayHomeTextScrollBound = false;
+let overlayHomeTextScrollRaf = 0;
+
 /**
- * 同步首页标题显示（hidden 类）：首页 + banner/fullscreen 模式显示标题，其余情况隐藏。
+ * 同步首页标题显示（hidden 类）：首页 + banner/fullscreen/overlay 模式显示标题，其余情况隐藏。
  * SSR 按 config 默认模式渲染 hidden（默认 overlay/none 时带 hidden），而模式可运行时切换、
  * 页面也会经 Swup 切换（body.is-home 变化），因此需要按当前 mode + 是否首页重新计算。
  * 标题开关（user-hidden 类）独立控制，不受影响。
@@ -296,8 +299,49 @@ export function syncBannerHomeTextVisibility(): void {
 	const mode = document.documentElement.getAttribute("data-wallpaper-mode");
 	const isHome = checkIsHomePage(window.location.pathname);
 	const show =
-		isHome && (mode === WALLPAPER_BANNER || mode === WALLPAPER_FULLSCREEN);
+		isHome &&
+		(mode === WALLPAPER_BANNER ||
+			mode === WALLPAPER_FULLSCREEN ||
+			mode === WALLPAPER_OVERLAY);
 	overlay.classList.toggle("hidden", !show);
+	updateOverlayHomeTextScroll();
+
+	// overlay 壁纸是 fixed 定位，首页标题需随文档一起上移，避免滚动时压在下层内容卡片上
+	if (!overlayHomeTextScrollBound) {
+		overlayHomeTextScrollBound = true;
+		window.addEventListener(
+			"scroll",
+			() => {
+				if (
+					document.documentElement.getAttribute("data-wallpaper-mode") !==
+					WALLPAPER_OVERLAY
+				) {
+					return;
+				}
+				if (overlayHomeTextScrollRaf) return;
+				overlayHomeTextScrollRaf = requestAnimationFrame(() => {
+					overlayHomeTextScrollRaf = 0;
+					updateOverlayHomeTextScroll();
+				});
+			},
+			{ passive: true },
+		);
+	}
+}
+
+/** overlay 首页：用 translateY 抵消 fixed 壁纸容器的滚动位移，使标题随内容滚出视口 */
+function updateOverlayHomeTextScroll(): void {
+	const overlay = document.querySelector(
+		".banner-home-text-overlay",
+	) as HTMLElement | null;
+	if (!overlay) return;
+	const mode = document.documentElement.getAttribute("data-wallpaper-mode");
+	const isHome = checkIsHomePage(window.location.pathname);
+	if (mode === WALLPAPER_OVERLAY && isHome) {
+		overlay.style.transform = `translateY(${-window.scrollY}px)`;
+	} else {
+		overlay.style.removeProperty("transform");
+	}
 }
 
 export function getDefaultFullscreenLayout(): FullscreenWallpaperLayout {
