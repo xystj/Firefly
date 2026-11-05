@@ -2,7 +2,7 @@ import type { BackgroundWallpaperConfig } from "@/types/backgroundWallpaper";
 
 export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	// 壁纸模式："banner" 横幅壁纸，"fullscreen" 全屏壁纸，"overlay" 覆盖透明，"none" 纯色背景无壁纸
-	mode: "banner",
+	mode: "overlay",
 	// 是否启用背景视频播放，配置后将在导航栏显示视频播放按钮
 	playerEnable: false,
 	/**
@@ -66,7 +66,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "欢迎来到咸鱼的小窝",
+			title: "欢迎来到砂糖小窝",
 			// 主页横幅主标题字体大小
 			titleSize: "3.5rem",
 			// 主页横幅副标题
@@ -99,6 +99,12 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 					name: "QQ频道",
 					icon: "fa7-brands:qq",
 					url: "https://pd.qq.com/s/4x0zyrxo9",
+					showName: true,
+				},
+				{
+					name: "app",
+					icon: "fa7-solid:mobile-screen",
+					url: "https://wwbnb.lanzouw.com/b00tckvu4d",
 					showName: true,
 				},
 			],
@@ -159,7 +165,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 壁纸透明度
 		opacity: 0.8,
 		// 背景模糊度
-		blur: 10,
+		blur: 2,
 		// 卡片透明度，0-1之间，值越小越透明
 		cardOpacity: 0.6,
 	},
