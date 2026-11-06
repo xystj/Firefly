@@ -36,3 +36,18 @@ seriesOrder: 1
 
 正文内容从这里开始撰写，支持 Markdown 语法。
 ![内容](图片链接) 
+---
+
+---
+<div style="background-color: var(--card-bg); border: 1px dashed var(--primary); padding: 20px; border-radius: 12px; margin: 20px 0;">
+<div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 15px; color: var(--primary);">📥 游戏</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+<a href="你的链接" target="_blank" class="btn-regular" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;"><i class="fa7-solid:cloud-arrow-up"></i> 度盘</a>
+<a href="你的链接" target="_blank" class="btn-regular" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;"><i class="fa7-solid:cloud"></i> UC盘</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span style="font-size: 0.9rem; color: #888;">夸克（复制下方口令打开手机APP）：</span>
+<div style="background-color: var(--btn-regular-bg); padding: 10px 15px; border-radius: 8px; font-family: monospace; font-size: 0.95rem; color: var(--btn-content);">口令</div>
+<div style="background-color: var(--btn-regular-bg); padding: 10px 15px; border-radius: 8px; font-family: monospace; font-size: 0.95rem; color: var(--btn-content);">口令</div>
+</div>
+</div>
