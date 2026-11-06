@@ -39,11 +39,11 @@ seriesOrder: 1
 ---
 
 ---
-<div style="background-color: var(--card-bg); border: 1px dashed var(--primary); padding: 20px; border-radius: 12px; margin: 20px 0;">
-<div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 15px; color: var(--primary);">📥 游戏</div>
-<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
-<a href="你的链接" target="_blank" class="btn-regular" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;"><i class="fa7-solid:cloud-arrow-up"></i> 度盘</a>
-<a href="你的链接" target="_blank" class="btn-regular" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;"><i class="fa7-solid:cloud"></i> UC盘</a>
+<div class="custom-download-box">
+<div class="custom-download-box__title">📥 解压软件</div>
+<div class="custom-download-box__actions">
+<a href="网盘链接" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud-arrow-up"></i> 度盘</a>
+<a href="网盘链接" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud"></i> UC盘</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px;">
 <span style="font-size: 0.9rem; color: #888;">夸克（复制下方口令打开手机APP）：</span>

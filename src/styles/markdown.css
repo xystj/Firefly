@@ -40,7 +40,9 @@
     }
   }
 
-  a:not(.no-styling) {
+  /* 自定义功能按钮（如 .custom-download-btn）自带完整样式，不能再套用正文链接的下划线/悬停底色，
+     否则触屏设备上 :hover 常驻会把按钮背景整个覆盖掉 */
+  a:not(.no-styling):not(.custom-download-btn) {
     @apply relative bg-none font-medium text-(--primary) underline decoration-(--link-underline) decoration-1 decoration-dashed underline-offset-4;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;

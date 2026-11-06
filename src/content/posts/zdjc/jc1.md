@@ -18,9 +18,11 @@ pinned: true
 - 解压软件电脑推荐7z-zip和WinRAR，手机推荐ZArchiver Pro或者MT管理器  
 
 ---
-<div style="background-color: var(--card-bg); border: 1px dashed var(--primary); padding: 20px; border-radius: 12px; margin: 20px 0;">
-<div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 15px; color: var(--primary);">📥 解压软件</div>
-<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
-<a href="https://wwbnb.lanzouw.com/b00tc92s1i" target="_blank" class="btn-regular" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;"><i class="fa7-solid:cloud-arrow-up"></i> 电脑解压软件</a>
-<a href="https://wwbnb.lanzouw.com/b00tc92s0h" target="_blank" class="btn-regular" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;"><i class="fa7-solid:cloud"></i> 手机解压软件</a>
+<div class="custom-download-box">
+<div class="custom-download-box__title">📥 解压软件</div>
+<div class="custom-download-box__actions">
+<a href="https://wwbnb.lanzouw.com/b00tc92s1i" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud-arrow-up"></i> 电脑解压软件</a>
+<a href="https://wwbnb.lanzouw.com/b00tc92s0h" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud"></i> 手机解压软件</a>
+</div>
+</div>
 

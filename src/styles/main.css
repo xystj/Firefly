@@ -681,3 +681,115 @@ html {
 .pagination-info {
   @apply text-sm text-(--text-secondary) text-center mb-2;
 }
+
+/* ==========================================================================
+   文章内自定义「资源下载框 / 功能按钮」
+   原先由 Markdown 内联 style 实现，内联样式一旦被移动端触屏 :hover、
+   样式重置或暗色模式规则覆盖就无法自愈，这里统一改为语义化类 + 主题变量。
+   注意：本段不要放进 @layer，非分层样式优先级高于 Tailwind 的 base/components。
+   ========================================================================== */
+.custom-download-box {
+    margin: 20px 0;
+    padding: 20px;
+    /* 拆写 border 长属性：主题色变量万一在某个渲染环境里取值失败，
+       只会丢失边框颜色，而不会像 border 简写那样把整条边框重置为 none */
+    border-width: 1px;
+    border-style: dashed;
+    border-color: var(--primary);
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    overflow-wrap: break-word;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.custom-download-box__title {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--primary);
+    transition: color 0.15s ease;
+}
+
+.custom-download-box__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.custom-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    /* 背景/前景都走主题变量，亮色与暗色由 variables.styl 的 :root / :root.dark 自动切换 */
+    background-color: var(--btn-regular-bg);
+    background-image: none;
+    color: var(--btn-content);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.custom-download-btn:hover,
+.custom-download-btn:focus-visible {
+    background-color: var(--btn-regular-bg-hover);
+    color: var(--btn-content);
+    text-decoration: none;
+}
+
+.custom-download-btn:active {
+    background-color: var(--btn-regular-bg-active);
+    transform: scale(0.97);
+}
+
+.custom-download-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* 暗色模式：主题变量已由 :root.dark 覆盖，这里只把虚线边框调柔，
+   避免高亮度的主题色直接压在深色卡片上显得刺眼 */
+:root.dark .custom-download-box {
+    border-color: color-mix(in oklch, var(--primary) 85%, var(--card-bg));
+}
+
+@media (max-width: 767px) {
+    .custom-download-box {
+        margin: 16px 0;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .custom-download-box__title {
+        margin-bottom: 12px;
+        font-size: 1rem;
+    }
+
+    .custom-download-box__actions {
+        gap: 8px;
+    }
+
+    /* 触屏：按钮等宽铺满一行、加大点按区域，长文案换行而不是撑破容器 */
+    .custom-download-btn {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .custom-download-btn:active {
+        transform: scale(0.98);
+    }
+}
