@@ -12,7 +12,7 @@ export const profileConfig: ProfileConfig = {
 	name: "又活了一天，真好",
 
 	// 个人签名
-	bio: "zako",
+	bio: "解压码xianyu  解压码2233",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons

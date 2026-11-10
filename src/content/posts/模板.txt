@@ -1,0 +1,30 @@
+---
+title: 文章标题
+description: 唔姆
+published: 2026-11-04发布日期
+updated: 2026-11-04更新日期
+tags: [标签]
+category: "分类"
+image: "封面路径"
+slug: "网页路径"
+series: "系列"
+---
+
+# 概述
+<br>换行
+
+---
+<div class="custom-download-box">
+<div class="custom-download-box__title">📥 游戏</div>
+<div class="custom-download-box__actions">
+<a href="网盘链接" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud-arrow-up"></i> 度盘</a>
+<a href="网盘链接" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud"></i> UC盘</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span style="font-size: 0.9rem; color: #888;">夸克（手机APP用）：</span>
+<div style="background-color: var(--btn-regular-bg); padding: 10px 15px; border-radius: 8px; font-family: monospace; font-size: 0.95rem; color: var(--btn-content);">口令</div>
+<div style="background-color: var(--btn-regular-bg); padding: 10px 15px; border-radius: 8px; font-family: monospace; font-size: 0.95rem; color: var(--btn-content);">口令</div>
+</div>
+</div>
+
+
