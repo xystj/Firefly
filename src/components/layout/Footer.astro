@@ -1,10 +1,30 @@
+---
+// 引入 Node.js 的文件系统模块，用于读取自定义页脚内容
+import fs from "node:fs";
+import path from "node:path";
+
+let customFooterHtml = "";
+try {
+	const footerHtmlPath = path.join(process.cwd(), "src", "config", "FooterConfig.html");
+	// 读取文件内容，并移除 HTML 注释
+	customFooterHtml = fs.readFileSync(footerHtmlPath, "utf-8").replace(/<!--[\s\S]*?-->/g, "").trim();
+} catch (error) {
+	console.warn("FooterConfig.html 读取失败:", error);
+}
+---
+
 <!-- 页脚 -->
 <footer class="site-footer pointer-events-auto pb-4 md:pb-6">
 	<!-- 顶部虚线分割线 -->
 	<div class="transition border-t border-black/10 dark:border-white/15 mt-10 mb-5 border-dashed mx-32"></div>
 
-	<!-- 只有这一行字 -->
-	<div class="transition text-50 text-sm text-center">
-		<span>已经到底了</span>
+	<div class="transition flex flex-col items-center justify-center text-50 text-sm text-center gap-2">
+		<!-- 保留 -->
+		<div>
+			<span>已经到底了</span>
+		</div>
+		
+		<!-- 这里会自动渲染你写在 FooterConfig.html 里的运行时间代码 -->
+		{customFooterHtml && <div set:html={customFooterHtml}></div>}
 	</div>
 </footer>

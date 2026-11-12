@@ -2,3 +2,34 @@
 	你可以在这个文件中使用HTML内容自定义网站底部的footer
 	You can use html to customize the footer at the bottom of the website in this file. 
 -->
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; font-size: 0.9rem; color: var(--text-75);">
+  <span>本窝已存活 </span>
+  <span id="runtime" style="font-weight: bold; color: var(--primary); margin: 0 4px;">0天 0小时 0分 0秒</span>
+</div>
+
+<script>
+  // ⚠️ 注意：把下面的日期改成你真正的建站日期（你之前填的是 2026-10-31）
+  const startDate = new Date("2026-11-01T00:00:00"); 
+
+  function updateRuntime() {
+    const now = new Date();
+    const diff = now.getTime() - startDate.getTime();
+    
+    if (diff < 0) {
+      document.getElementById("runtime").innerText = "0天 0小时 0分 0秒";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById("runtime").innerText = 
+      `${days}天 ${hours}小时 ${minutes}分 ${seconds}秒`;
+  }
+
+  // 立即执行一次，并每秒更新
+  updateRuntime();
+  setInterval(updateRuntime, 1000);
+</script>
