@@ -794,3 +794,18 @@ html {
     }
 }
 
+/* ==========================================================================
+   Twikoo 评论系统 UI 精简
+   ========================================================================== */
+
+/* 隐藏评论表单中的第三个输入框（网址） */
+#twikoo .tk-meta-input > .el-input:nth-child(3) {
+    display: none !important;
+}
+
+/* 隐藏评论框右下角预览左侧的 Markdown 帮助跳转图标（M↓） */
+#twikoo .tk-submit-action-icon.__markdown,
+.twikoo .tk-submit-action-icon.__markdown {
+    display: none !important;
+}
+
