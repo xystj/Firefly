@@ -808,4 +808,7 @@ html {
 .twikoo .tk-submit-action-icon.__markdown {
     display: none !important;
 }
-
+/* 隐藏 Twikoo 右下角的 Powered by 版权信息 */
+#twikoo .tk-footer {
+    display: none !important;
+}
