@@ -17,14 +17,7 @@ series: "系列"
 <div class="custom-download-box">
 <div class="custom-download-box__title">📥 游戏</div>
 <div class="custom-download-box__actions">
-<a href="网盘链接" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud-arrow-up"></i> 度盘</a>
-<a href="网盘链接" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud"></i> UC盘</a>
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px;">
-<span style="font-size: 0.9rem; color: #888;">夸克（手机APP用）：</span>
-<div style="background-color: var(--btn-regular-bg); padding: 10px 15px; border-radius: 8px; font-family: monospace; font-size: 0.95rem; color: var(--btn-content);">口令</div>
-<div style="background-color: var(--btn-regular-bg); padding: 10px 15px; border-radius: 8px; font-family: monospace; font-size: 0.95rem; color: var(--btn-content);">口令</div>
+<a href="这里填你的蓝奏云链接" target="_blank" class="custom-download-btn"><i class="fa7-solid:cloud-arrow-up"></i> 下载</a>
 </div>
 </div>
-
 
