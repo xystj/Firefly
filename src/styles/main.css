@@ -812,3 +812,11 @@ html {
 #twikoo .tk-footer {
     display: none !important;
 }
+
+/* 隐藏评论输入框左下角的 Emoji（表情）图标
+   仅作用于工具栏上的表情切换按钮（同时带 tk-submit-action-icon 与 OwO 类），
+   不会影响 OwO 表情面板本身（.OwO .OwO-body）及回复区其他表情交互 */
+#twikoo .tk-submit-action-icon.OwO,
+.twikoo .tk-submit-action-icon.OwO {
+    display: none !important;
+}

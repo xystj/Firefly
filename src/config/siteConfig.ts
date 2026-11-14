@@ -71,9 +71,9 @@ export const siteConfig: SiteConfig = {
 	// 网站Card样式配置
 	card: {
 		// 是否开启卡片边框和阴影，开启后让网站更有立体感
-		border: false,
+		border: true,
 		// 是否让卡片风格跟随主题色相
-		followTheme: false,
+		followTheme: true,
 	},
 
 	// Favicon 配置
@@ -231,9 +231,9 @@ export const siteConfig: SiteConfig = {
 		// 是否显示上一篇/下一篇文章导航
 		postNavigation: true,
 		// 是否显示相关文章推荐
-		relatedPosts: true,
+		relatedPosts: false,
 		// 是否显示随机文章推荐
-		randomPosts: true,
+		randomPosts: false,
 		// OpenGraph图片功能，注意开启后要渲染很长时间，不建议本地调试的时候开启
 		generateOgImages: false,
 		// 沉浸阅读配置：电脑端文章详情页右下角按钮，进入后只留文章卡片+左侧目录
