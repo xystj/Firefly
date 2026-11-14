@@ -349,30 +349,75 @@ html.is-page-transitioning .banner-home-text-overlay {
     animation: banner-fadeInUp 0.3s ease-out 0.5s both;
 }
 
+/*
+ * 可辨识性增强：按钮叠在任意壁纸（纯白、浅色、复杂纹理、深色）之上，
+ * 原先「白色半透明底 + 白字」在浅色/杂色背景上几乎没有对比度，改为：
+ * 1. 深色磨砂底 + backdrop-filter 亮度归一化，把按钮背后的局部背景压暗，白字/白图标始终高对比；
+ * 2. 高亮白描边 + 深色投影，浅色背景靠深色填充识别，深色背景靠白描边识别；
+ * 3. 文字/图标阴影压制复杂纹理的干扰。
+ * 仅调整视觉样式，尺寸、位置、点击与跳转逻辑保持不变。
+ */
 .banner-link {
+    --banner-link-bg: rgba(0, 0, 0, 0.62);
+    --banner-link-bg-hover: rgba(0, 0, 0, 0.55);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 9999px;
-    color: rgba(255, 255, 255, 0.92);
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    background: var(--banner-link-bg);
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.45),
+        0 2px 12px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
-/* 图标跟随按钮颜色（SVG 默认 fill 为黑，需显式指定） */
+/* 支持 backdrop-filter 时，先把按钮背后的背景压暗再叠加深色底，浅色/亮色壁纸下对比度更高 */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .banner-link {
+        --banner-link-bg: rgba(0, 0, 0, 0.45);
+        --banner-link-bg-hover: rgba(0, 0, 0, 0.38);
+        backdrop-filter: blur(10px) brightness(0.6) saturate(1.15);
+        -webkit-backdrop-filter: blur(10px) brightness(0.6) saturate(1.15);
+    }
+}
+
+/* 图标跟随按钮颜色（SVG 默认 fill 为黑，需显式指定），投影避免与纹理粘连 */
 .banner-link svg {
     fill: currentColor;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75));
 }
 
 .banner-link:hover {
-    background: rgba(255, 255, 255, 0.26);
+    background-color: var(--banner-link-bg-hover);
+    border-color: #fff;
     color: #fff;
     transform: translateY(-2px) scale(1.05);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.45),
+        0 4px 18px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+.banner-link:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* 键盘焦点：深/白双层描边，保证在浅色与深色壁纸下都能看见焦点位置 */
+.banner-link:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.85),
+        0 0 0 4px rgba(255, 255, 255, 0.95),
+        0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .banner-link-text {
