@@ -22,9 +22,9 @@ export const profileConfig: ProfileConfig = {
 	// showName: true 时显示图标和名称，false 时只显示图标
 	links: [
 		{
-			name: "QQ频道",
+			name: "Q群和频道",
 			icon: "fa7-brands:qq",
-			url: "https://pd.qq.com/s/4x0zyrxo9",
+			url: "https://wwbnb.lanzouw.com/b00tcybfkd",
 			showName: false,
 		},
 	],

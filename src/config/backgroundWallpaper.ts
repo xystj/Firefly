@@ -96,9 +96,9 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 图标支持 Iconify 格式：fa7-brands:github、fa7-solid:envelope、mdi:rss 等
 			links: [
 				{
-					name: "QQ频道",
+					name: "Q群和频道",
 					icon: "fa7-brands:qq",
-					url: "https://pd.qq.com/s/4x0zyrxo9",
+					url: "https://wwbnb.lanzouw.com/b00tcybfkd",
 					showName: true,
 				},
 				{
