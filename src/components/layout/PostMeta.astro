@@ -29,6 +29,8 @@ export interface Props {
 	showWords?: boolean;
 	showReadingTime?: boolean;
 	variant?: "default" | "cover";
+	/** 是否将标签纳入 Pagefind 全文索引并挂载 filter（仅文章详情页开启） */
+	pagefindTags?: boolean;
 }
 
 const {
@@ -54,6 +56,7 @@ const {
 	showReadingTime = false,
 	password,
 	variant = "default",
+	pagefindTags = false,
 } = Astro.props;
 
 const path = customPath || (id ? `/posts/${id}` : "");
@@ -142,6 +145,7 @@ const visibleTags =
           "post-meta-tags items-center",
           { flex: !hideTagsForMobile, "hidden md:flex": hideTagsForMobile },
         ]}
+        data-pagefind-body={pagefindTags ? "" : undefined}
       >
         <div class="flex flex-row flex-wrap items-center">
           <div class="meta-icon">
@@ -162,6 +166,7 @@ const visibleTags =
                 <a
                   href={getTagUrl(tag)}
                   aria-label={`View all posts with the ${tag.trim()} tag`}
+                  data-pagefind-filter={pagefindTags ? "tag" : undefined}
                   class="link-lg transition text-50 text-sm font-medium
                     hover:text-(--primary) dark:hover:text-(--primary) whitespace-nowrap"
                 >
