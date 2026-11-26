@@ -44,7 +44,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "一个小破窝",
 
 	// 站点 URL
-	site_url: "https://blog.stxw.ccwu.cc/",
+	site_url: "https://xyst.de5.net/",
 
 	// 站点描述
 	description:
